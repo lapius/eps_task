@@ -1,4 +1,4 @@
-﻿using EPS_task.Shared;
+﻿using EPS_task.Shared.Entities;
 
 namespace EPS_task.Client.Services.DiscountCodeService
 {

@@ -1,8 +1,6 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace EPS_task.Shared
+namespace EPS_task.Shared.Entities
 {
     public class DiscountCode
     {

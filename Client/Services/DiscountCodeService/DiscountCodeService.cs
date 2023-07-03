@@ -1,4 +1,4 @@
-﻿using EPS_task.Shared;
+﻿using EPS_task.Shared.Entities;
 using System.Net.Http.Json;
 
 namespace EPS_task.Client.Services.DiscountCodeService

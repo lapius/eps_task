@@ -1,4 +1,4 @@
-﻿using EPS_task.Shared;
+﻿using EPS_task.Shared.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace EPS_task.Server.Data

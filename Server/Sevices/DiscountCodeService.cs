@@ -1,17 +1,20 @@
 ﻿using EPS_task.Server.Data;
-using EPS_task.Shared;
+using EPS_task.Server.Repositories;
+using EPS_task.Shared.Entities;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Cryptography;
 
 namespace EPS_task.Server.Sevices
 {
-    public class GenerateCodeService : IGenerateCodeService
+    public class DiscountCodeService : IDiscountCodeService
     {
         private readonly DataContext _context;
+        private readonly IDiscountCodeRepository _discountCodeRepository;
 
-        public GenerateCodeService(DataContext context)
+        public DiscountCodeService(DataContext context, IDiscountCodeRepository discountCodeRepository)
         {
             _context = context;
+            _discountCodeRepository = discountCodeRepository;
         }
 
 
@@ -40,10 +43,28 @@ namespace EPS_task.Server.Sevices
                     }
                 }
 
-                _context.DiscountCodes.AddRange(codes);
+                _discountCodeRepository.AddRange(codes);
                 await _context.SaveChangesAsync();
             }
+        }
 
+        public List<DiscountCode> GetDiscountCodes()
+        {
+            return _discountCodeRepository.GetAll();
+        }
+
+        
+        public DiscountCode GetSingleDiscountCode(int id)
+        {
+            return _discountCodeRepository.Get(id);
+        }
+
+
+        public UpdateDiscountResult UpdateDiscountCode(string code)
+        {
+            _discountCodeRepository.Update(code);
+            _context.SaveChangesAsync();
+            return new UpdateDiscountResult { Success = true };
         }
     }
 }

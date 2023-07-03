@@ -1,9 +1,7 @@
 ﻿using EPS_task.Server.Data;
 using EPS_task.Server.Sevices;
-using EPS_task.Shared;
-using Microsoft.AspNetCore.Http;
+using EPS_task.Shared.Entities;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace EPS_task.Server.Controllers
 {
@@ -12,12 +10,12 @@ namespace EPS_task.Server.Controllers
     public class DiscountCodeController : ControllerBase
     {
         private readonly DataContext _context;
-        private readonly IGenerateCodeService _generateCodeService;
+        private readonly IDiscountCodeService _discountCodeService;
 
-        public DiscountCodeController(DataContext context, IGenerateCodeService generateCodeService)
+        public DiscountCodeController(DataContext context, IDiscountCodeService discountCodeService)
         {
             _context = context;
-            _generateCodeService = generateCodeService;
+            _discountCodeService = discountCodeService;
         }
 
         [HttpGet]
@@ -25,8 +23,7 @@ namespace EPS_task.Server.Controllers
         {
             try
             {
-                var discountCodes = await _context.DiscountCodes.ToListAsync();
-                return discountCodes;
+                return _discountCodeService.GetDiscountCodes();
             }
             catch (Exception ex)
             {
@@ -39,8 +36,8 @@ namespace EPS_task.Server.Controllers
         {
             try
             {
-                var discountCode = await _context.DiscountCodes.FindAsync(id);
-                if(discountCode == null)
+                var discountCode = _discountCodeService.GetSingleDiscountCode(id);
+                if (discountCode == null)
                 {
                     return NotFound("Nothing found");
                 }
@@ -54,11 +51,11 @@ namespace EPS_task.Server.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<DiscountCode>> CreateDiscountCode(GenerateCodeRequest codeRequest)
+        public async Task<ActionResult> CreateDiscountCode(GenerateCodeRequest codeRequest)
         {
             try
             {
-                await _generateCodeService.GenerateDiscountCodes(codeRequest);
+                await _discountCodeService.GenerateDiscountCodes(codeRequest);
 
                 return Ok();
             }
@@ -69,23 +66,13 @@ namespace EPS_task.Server.Controllers
         }
 
         [HttpPut("{code}")]
-        public async Task<ActionResult<DiscountCode>> UpdateDiscountCode(string code)
+        public async Task<ActionResult> UpdateDiscountCode(string code)
         {
             try
             {
-                var discountCode = await _context.DiscountCodes.FirstOrDefaultAsync(c => c.Code == code);
-                if (discountCode == null)
-                {
-                    return NotFound("Nothing found");
-                }
-                if (discountCode.IsUsed)
-                {
-                    return Conflict("The discount code is already used.");
-                }
-                discountCode.IsUsed = true;
-                discountCode.UsedOn = DateTime.Now;
-
-                await _context.SaveChangesAsync();
+                var result = _discountCodeService.UpdateDiscountCode(code); 
+                if(result.Success == false)
+                    return StatusCode(result.StatusCode, result.Message);
 
                 return Ok();
             }
