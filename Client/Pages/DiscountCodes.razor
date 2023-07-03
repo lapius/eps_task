@@ -1,0 +1,37 @@
+﻿@page "/discountcodes"
+@inject IDiscountCodeService DiscountCodeService
+
+<PageTitle>Discount Codes</PageTitle>
+
+<h3>Discount Codes</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Discount code</th>
+            <th>Is used</th>
+            <th>Date created</th>
+            <th>Date used</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var discountCode in DiscountCodeService.DiscountCodes)
+        {
+            <tr>
+                <td>@discountCode.Id</td>
+                <td>@discountCode.Code</td>
+                <td>@discountCode.IsUsed</td>
+                <td>@discountCode.CreatedOn</td>
+                <td>@discountCode.UsedOn</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        await DiscountCodeService.GetDiscountCodes();
+    }
+}

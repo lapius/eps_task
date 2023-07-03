@@ -1,0 +1,26 @@
+﻿@page "/usecode"
+@inject IDiscountCodeService DiscountCodeService
+
+<PageTitle>Use Discount Code</PageTitle>
+<h3>Use Discount Code</h3>
+
+<EditForm Model="discountCode" OnSubmit="HandleSubmit">
+    <div>
+        <label for="count">Discount code</label>
+        <InputText @bind-Value="discountCode" class="form-control" ></InputText>
+    </div>
+    <br />
+    <label>@result</label>
+    <br />
+    <button type="submit" class="btn btn-primary">Use code</button>
+</EditForm>
+
+@code {
+    string discountCode = "";
+    string result = "";
+
+    async Task HandleSubmit()
+    {
+        result = await DiscountCodeService.UpdateDiscountCode(discountCode);
+    }
+}

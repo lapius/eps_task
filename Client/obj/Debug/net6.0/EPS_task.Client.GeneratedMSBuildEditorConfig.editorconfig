@@ -22,16 +22,20 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Tasks/EPS_TASK/EPS_task/Client/Pages/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
+[D:/Tasks/EPS_TASK/EPS_task/Client/Pages/DiscountCodes.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGlzY291bnRDb2Rlcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Tasks/EPS_TASK/EPS_task/Client/Pages/FetchData.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
+[D:/Tasks/EPS_TASK/EPS_task/Client/Pages/GenerateDiscountCodes.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2VuZXJhdGVEaXNjb3VudENvZGVzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Tasks/EPS_TASK/EPS_task/Client/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tasks/EPS_TASK/EPS_task/Client/Pages/UseDiscountCode.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlRGlzY291bnRDb2RlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Tasks/EPS_TASK/EPS_task/Client/Shared/SurveyPrompt.razor]

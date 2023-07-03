@@ -1,0 +1,12 @@
+D:\Tasks\EPS_TASK\EPS_task\Shared\bin\Debug\net6.0\EPS_task.Shared.deps.json
+D:\Tasks\EPS_TASK\EPS_task\Shared\bin\Debug\net6.0\EPS_task.Shared.dll
+D:\Tasks\EPS_TASK\EPS_task\Shared\bin\Debug\net6.0\EPS_task.Shared.pdb
+D:\Tasks\EPS_TASK\EPS_task\Shared\obj\Debug\net6.0\EPS_task.Shared.csproj.AssemblyReference.cache
+D:\Tasks\EPS_TASK\EPS_task\Shared\obj\Debug\net6.0\EPS_task.Shared.GeneratedMSBuildEditorConfig.editorconfig
+D:\Tasks\EPS_TASK\EPS_task\Shared\obj\Debug\net6.0\EPS_task.Shared.AssemblyInfoInputs.cache
+D:\Tasks\EPS_TASK\EPS_task\Shared\obj\Debug\net6.0\EPS_task.Shared.AssemblyInfo.cs
+D:\Tasks\EPS_TASK\EPS_task\Shared\obj\Debug\net6.0\EPS_task.Shared.csproj.CoreCompileInputs.cache
+D:\Tasks\EPS_TASK\EPS_task\Shared\obj\Debug\net6.0\EPS_task.Shared.dll
+D:\Tasks\EPS_TASK\EPS_task\Shared\obj\Debug\net6.0\refint\EPS_task.Shared.dll
+D:\Tasks\EPS_TASK\EPS_task\Shared\obj\Debug\net6.0\EPS_task.Shared.pdb
+D:\Tasks\EPS_TASK\EPS_task\Shared\obj\Debug\net6.0\ref\EPS_task.Shared.dll
