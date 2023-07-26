@@ -1,4 +1,4 @@
-# EPS_Task
+# REST demo
 
 **Entity Framework Core with Blazor**
 
